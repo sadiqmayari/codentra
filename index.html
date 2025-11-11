@@ -105,22 +105,39 @@
   <section class="section-bg py-5 text-center">
     <blockquote class="blockquote">
       <p class="mb-3">“Codentra automated 80% of our workflows and helped reduce ad costs by 35%.”</p>
-      <footer class="blockquote-footer text-white">CEO, Example Company</footer>
+      <footer class="blockquote-footer text-white">CEO, Sois Life Sciences</footer>
     </blockquote>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">Let’s Build Something Smart</h2>
-      <form class="mx-auto" style="max-width: 500px;">
-        <input type="text" placeholder="Your Name" class="form-control mb-3" required>
-        <input type="email" placeholder="Email Address" class="form-control mb-3" required>
-        <textarea placeholder="Your Message" rows="4" class="form-control mb-3"></textarea>
-        <button type="submit" class="btn btn-gold w-100">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <div class="container text-center">
+    <h2 class="mb-4">Let’s Build Something Smart</h2>
+    <form id="contactForm" class="mx-auto" style="max-width: 500px;">
+      <input type="text" id="name" placeholder="Your Name" class="form-control mb-3" required>
+      <input type="email" id="email" placeholder="Email Address" class="form-control mb-3" required>
+      <textarea id="message" placeholder="Your Message" rows="4" class="form-control mb-3"></textarea>
+      <button type="submit" class="btn btn-gold w-100">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const whatsappNumber = "+923171263292";
+    const text = `*New Inquiry from Website*%0A%0A👤 Name: ${name}%0A📧 Email: ${email}%0A💬 Message: ${message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, "_blank");
+  });
+</script>
+
 
   <footer class="text-center py-4 section-bg">
     © 2025 Codentra. All Rights Reserved.
